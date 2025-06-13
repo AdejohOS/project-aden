@@ -25,7 +25,7 @@ export const TestimonialCard = ({
           </svg>
         ))}
       </div>
-      <p className="italic text-gray-700 mb-6">"{quote}"</p>
+      <p className="italic text-gray-700 mb-6">&apos;{quote}&apos;</p>
       <div className="flex items-center gap-4">
         <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
           <span className="font-bold text-emerald-600">{initials}</span>

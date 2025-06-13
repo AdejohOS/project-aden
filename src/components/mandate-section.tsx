@@ -44,8 +44,8 @@ export const MandatesSection = () => {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Core Mandates</h2>
           <p className="text-lg text-gray-600">
-            ADEN's mission is centered around two key mandates that drive our
-            work across the continent.
+            ADEN&apos;s mission is centered around two key mandates that drive
+            our work across the continent.
           </p>
         </div>
 

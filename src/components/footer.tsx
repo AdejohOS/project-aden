@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  GraduationCap,
-  Mail,
-  MapPin,
-  PhoneCall,
-} from "lucide-react";
+import { ArrowRight, Mail, MapPin, PhoneCall } from "lucide-react";
 import { Logo } from "./logo";
 import { Separator } from "./ui/separator";
 
@@ -27,7 +21,7 @@ export const Footer = () => {
           <div className="space-y-4">
             <Logo />
             <p className="text-gray-500">
-              Empowering Africa's educational institutions through digital
+              Empowering Africa&apos;s educational institutions through digital
               transformation.
             </p>
             <div className="flex gap-4">

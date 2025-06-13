@@ -27,11 +27,11 @@ export const WelcomeNote = () => {
                 </div>
                 <h2 className="text-3xl font-bold">Prof. Raymond B. Bako</h2>
                 <blockquote className="text-lg italic text-gray-700 border-l-4 border-emerald-500 pl-4">
-                  "Education is the most powerful tool we can use to change
-                  Africa. Through digital transformation, we're creating
+                  &apos;Education is the most powerful tool we can use to change
+                  Africa. Through digital transformation, we&apos;re creating
                   opportunities for millions of students across our continent to
                   access quality education regardless of their location or
-                  circumstances."
+                  circumstances.&apos;
                 </blockquote>
                 <p className="text-gray-600">
                   I welcome you to the homepage of the African Digital Education

@@ -40,8 +40,8 @@ export const TestimonialsSection = () => {
             What Our Partners Say
           </h2>
           <p className="text-lg text-gray-600">
-            Hear from institutions that have benefited from ADEN's resources and
-            support.
+            Hear from institutions that have benefited from ADEN&apos;s
+            resources and support.
           </p>
         </div>
 

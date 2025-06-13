@@ -11,7 +11,7 @@ export const CtaSection = () => {
             </h2>
             <p className="text-lg opacity-90">
               Partner with us to transform digital education at your institution
-              and contribute to Africa's digital future.
+              and contribute to Africa&apos;s digital future.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button

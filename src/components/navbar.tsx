@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import Link from "next/link";
