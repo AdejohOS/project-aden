@@ -4,7 +4,7 @@ export const MandatesSection = () => {
   const mandates = [
     {
       title: "Raising Awareness",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/obj.png?height=400&width=600",
       description:
         "We actively promote the benefits of digital education across Africa through various initiatives and programs.",
       items: [
@@ -16,7 +16,7 @@ export const MandatesSection = () => {
     },
     {
       title: "Sharing Resources",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/sharing.png?height=400&width=600",
       description:
         "We facilitate resource sharing with African institutions of higher education through our extensive network.",
       items: [

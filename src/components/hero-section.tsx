@@ -63,7 +63,13 @@ export const Hero = () => {
                     key={i.name}
                     className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden"
                   >
-                    <Image src={i.logo} alt={i.name} width={32} height={32} />
+                    <Image
+                      src={i.logo}
+                      alt={i.name}
+                      width={32}
+                      height={32}
+                      loading="lazy"
+                    />
                   </div>
                 ))}
               </div>
@@ -83,6 +89,7 @@ export const Hero = () => {
               width={600}
               height={600}
               className="w-full h-auto"
+              loading="lazy"
             />
           </div>
         </div>

@@ -63,7 +63,7 @@ export const ImpactSection = () => {
 
         <div className="relative rounded-2xl overflow-hidden shadow-xl">
           <Image
-            src="/placeholder.svg?height=500&width=1200"
+            src="/images/impact.png?height=500&width=1200"
             alt="Map of ADEN's impact across Africa"
             width={1200}
             height={500}

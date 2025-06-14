@@ -10,7 +10,7 @@ export const WelcomeNote = () => {
               <div className="md:col-span-2">
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg border-4 border-white">
                   <Image
-                    src="/images/cordinator.jpg"
+                    src="/images/cordinator.png"
                     alt="Professor Raymond, ADEN Coordinator"
                     fill
                     className="object-cover"
