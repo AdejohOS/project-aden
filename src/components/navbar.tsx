@@ -50,11 +50,11 @@ export const Navbar = () => {
               ))}
               <Button
                 variant="outline"
-                className="border-emerald-600 text-emerald-600 hover:bg-emerald-50"
+                className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 cursor-pointer"
               >
                 Partner With Us
               </Button>
-              <Button className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white">
+              <Button className="bg-gradient-to-r from-emerald-600 cursor-pointer to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white">
                 Get Resources
               </Button>
             </nav>

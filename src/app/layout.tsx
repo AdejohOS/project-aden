@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { SubscribeUserModal } from "@/components/modals/subscribe-user-modal";
+import { NuqsAdapter } from "nuqs/adapters/next";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -26,11 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(font.className, "antialiased")}>
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <div className="flex-1">{children}</div>
-          <Footer />
-        </div>
+        <NuqsAdapter>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <SubscribeUserModal />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </div>
+        </NuqsAdapter>
       </body>
     </html>
   );

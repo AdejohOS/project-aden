@@ -1,8 +1,10 @@
+"use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, MapPin, PhoneCall } from "lucide-react";
 import { Logo } from "./logo";
 import { Separator } from "./ui/separator";
+import { useSubscribeModal } from "@/hooks/use-subscribe";
 
 export const Footer = () => {
   const resourceLinks = [
@@ -13,6 +15,8 @@ export const Footer = () => {
   ];
   const aboutLinks = ["Our Mission", "Team", "Partners", "Success Stories"];
   const socialPlatforms = ["Twitter", "LinkedIn", "Facebook"];
+
+  const { open } = useSubscribeModal();
 
   return (
     <footer className="bg-slate-300/20 text-white">
@@ -69,7 +73,10 @@ export const Footer = () => {
               </li>
             </ul>
             <div className="pt-4">
-              <Button className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white">
+              <Button
+                onClick={open}
+                className="bg-gradient-to-r cursor-pointer from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white"
+              >
                 Subscribe to Newsletter
               </Button>
             </div>
