@@ -8,6 +8,8 @@ import { ResourcesSection } from "@/components/resources-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { WelcomeNote } from "@/components/welcome-note";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <main>
