@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BarChart, Globe, GraduationCap, Users } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { StatCard } from "./ui/stats-card";
@@ -149,8 +150,11 @@ export const ImpactSection = () => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <Button className="bg-white text-emerald-600 hover:bg-gray-100 rounded-xl">
-                  View Success Stories
+                <Button
+                  asChild
+                  className="bg-white text-emerald-600 hover:bg-gray-100 rounded-xl"
+                >
+                  <Link href="/success-stories">View Success Stories</Link>
                 </Button>
               </motion.div>
             </motion.div>

@@ -10,10 +10,10 @@ import { MobileMenu } from "./mobile-menu";
 import { Logo } from "./logo";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#mandates", label: "Our Mandates" },
-  { href: "#resources", label: "Resources" },
-  { href: "#impact", label: "Impact" },
+  { href: "/#about", label: "About" },
+  { href: "/#mandates", label: "Our Mandates" },
+  { href: "/#resources", label: "Resources" },
+  { href: "/#impact", label: "Impact" },
 ];
 
 export const Navbar = () => {
@@ -112,8 +112,9 @@ export const Navbar = () => {
                 <Button
                   variant="outline"
                   className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 cursor-pointer"
+                  asChild
                 >
-                  Partner With Us
+                  <Link href="/partner">Partner With Us</Link>
                 </Button>
               </motion.div>
 
