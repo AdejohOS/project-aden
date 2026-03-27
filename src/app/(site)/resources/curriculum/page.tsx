@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Curriculum from "./_components/curriculum";
 
 export const metadata: Metadata = {
   title: "Curriculum | ADEN",
@@ -8,9 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ExploreCurriculumPage() {
-  return (
-    <main className="bg-white">
-      <Curriculum />
-    </main>
-  );
+  return <main className="bg-white">Hello</main>;
 }
