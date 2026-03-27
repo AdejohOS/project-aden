@@ -110,7 +110,7 @@ export const Footer = () => {
 
             <ul className="space-y-4 text-gray-400">
               <li className="flex gap-3">
-                <MapPin className="text-emerald-400 size-4 mt-1" />
+                <MapPin className="text-emerald-400 size-4 mt-1 shrink-0" />
                 <span>ACENPEE Building, Ahmadu Bello University, Zaria.</span>
               </li>
 
@@ -120,7 +120,7 @@ export const Footer = () => {
               </li>
 
               <li className="flex gap-3">
-                <Mail className="text-emerald-400 size-4 mt-1" />
+                <Mail className="text-emerald-400 size-4 mt-1 shrink-0" />
                 <span>contact@aden.org</span>
               </li>
             </ul>

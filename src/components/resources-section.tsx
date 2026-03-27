@@ -24,6 +24,7 @@ export const ResourcesSection = () => {
       id: "curriculum",
       title: "Digital Curriculum",
       image: "/images/resources/curriculum.jpg",
+      href: "/resources/curriculum",
       description:
         "Access curriculum frameworks, lesson plans, and assessment tools designed specifically for African educational contexts.",
       features: [
@@ -38,6 +39,7 @@ export const ResourcesSection = () => {
       id: "training",
       title: "Training Programs",
       image: "/images/resources/training.jpg",
+      href: "/resources/training",
       description:
         "Professional development programs to build capacity in digital teaching methods and educational technology.",
       features: [
@@ -52,6 +54,7 @@ export const ResourcesSection = () => {
       id: "technology",
       title: "Technology Solutions",
       image: "/images/resources/technology.jpg",
+      href: "/resources/technology",
       description:
         "Guidance on implementing cost-effective technology solutions suitable for various infrastructure contexts.",
       features: [
@@ -131,6 +134,7 @@ export const ResourcesSection = () => {
                   <ResourceTab
                     title={resource.title}
                     image={resource.image}
+                    href={resource.href}
                     description={resource.description}
                     features={resource.features}
                     buttonText={resource.buttonText}

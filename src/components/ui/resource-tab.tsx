@@ -3,12 +3,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
 interface ResourceTabProps {
   title: string;
   image: string;
+  href: string;
   description: string;
   features: string[];
   buttonText: string;
@@ -31,6 +33,7 @@ const fadeUpVariants = {
 export const ResourceTab = ({
   title,
   image,
+  href,
   description,
   features,
   buttonText,
@@ -97,9 +100,11 @@ export const ResourceTab = ({
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
         >
-          <Button className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white w-fit rounded-xl">
-            {buttonText}
-          </Button>
+          <Link href={href}>
+            <Button className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white w-fit rounded-xl">
+              {buttonText}
+            </Button>
+          </Link>
         </motion.div>
       </motion.div>
     </div>

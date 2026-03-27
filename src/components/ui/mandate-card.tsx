@@ -40,7 +40,7 @@ export const MandateCard = ({
             alt={title}
             fill
             className="object-cover"
-            loading="lazy"
+            loading="eager"
           />
         </motion.div>
 
