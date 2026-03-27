@@ -1,31 +1,7 @@
-import Link from "next/link";
-
-import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  BookOpen,
-  CheckCircle2,
-  Globe,
-  GraduationCap,
-  Users,
-} from "lucide-react";
+import { Metadata } from "next";
 import Success from "./_components/success";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0 },
-};
-
-const stagger = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-export const metadata = {
+export const metadata: Metadata = {
   title: "Success Stories | ADEN",
   description:
     "Explore how ADEN is helping institutions across Africa improve digital teaching, strengthen learning systems, and expand access to quality education.",

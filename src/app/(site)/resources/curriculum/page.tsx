@@ -1,6 +1,7 @@
+import { Metadata } from "next";
 import Curriculum from "./_components/curriculum";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Curriculum | ADEN",
   description:
     "Explore digital education curriculum frameworks, learning resources, and institutional support offered by ADEN.",
