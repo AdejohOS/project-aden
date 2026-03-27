@@ -1,12 +1,14 @@
+"use client";
+
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface MandateCardProps {
   title: string;
   image: string;
   description: string;
   items: string[];
+  index: number;
 }
 
 export const MandateCard = ({
@@ -14,39 +16,60 @@ export const MandateCard = ({
   image,
   description,
   items,
+  index,
 }: MandateCardProps) => {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
-      <div className="relative h-64">
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-          <h3 className="text-2xl font-bold text-white p-6">{title}</h3>
-        </div>
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 60 },
+        show: { opacity: 1, y: 0 },
+      }}
+      transition={{ delay: index * 0.2 }}
+      whileHover={{ y: -10 }}
+      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+    >
+      {/* IMAGE */}
+      <div className="relative h-56 overflow-hidden">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.4 }}
+          className="h-full w-full"
+        >
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover"
+            loading="lazy"
+          />
+        </motion.div>
+
+        {/* overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60" />
       </div>
-      <div className="p-6 space-y-4">
+
+      {/* CONTENT */}
+      <div className="p-6 md:p-8 space-y-4">
+        <h3 className="text-2xl font-bold">{title}</h3>
+
         <p className="text-gray-600">{description}</p>
-        <ul className="space-y-3">
+
+        {/* LIST */}
+        <ul className="space-y-2">
           {items.map((item, i) => (
-            <li key={i} className="flex items-center gap-3">
-              <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                <ChevronRight className="h-4 w-4 text-emerald-600" />
-              </div>
-              <span>{item}</span>
-            </li>
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-start gap-2 text-gray-600"
+            >
+              <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+              {item}
+            </motion.li>
           ))}
         </ul>
-        <Button
-          variant="outline"
-          className="mt-4 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
-        >
-          Learn More
-        </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };

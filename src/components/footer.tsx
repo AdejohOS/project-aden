@@ -1,10 +1,30 @@
 "use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, MapPin, PhoneCall } from "lucide-react";
-import { Logo } from "./logo";
+import { ArrowRight, Mail, MapPin, PhoneCall, X } from "lucide-react";
+
 import { Separator } from "./ui/separator";
 import { useSubscribeModal } from "@/hooks/use-subscribe";
+import Image from "next/image";
+
+import { FaLinkedinIn, FaFacebook } from "react-icons/fa6";
+import { BsTwitterX } from "react-icons/bs";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0 },
+};
 
 export const Footer = () => {
   const resourceLinks = [
@@ -13,97 +33,134 @@ export const Footer = () => {
     "Technology Solutions",
     "Research Publications",
   ];
+
   const aboutLinks = ["Our Mission", "Team", "Partners", "Success Stories"];
-  const socialPlatforms = ["Twitter", "LinkedIn", "Facebook"];
+  const socialPlatforms = [
+    { name: "X", icon: <BsTwitterX className="shrink-0 size-4" /> },
+    { name: "LinkedIn", icon: <FaLinkedinIn className="shrink-0 size-4" /> },
+    { name: "Facebook", icon: <FaFacebook className="shrink-0 size-4" /> },
+  ];
 
   const { open } = useSubscribeModal();
 
   return (
-    <footer className="bg-slate-300/20 text-white">
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          <div className="space-y-4">
-            <Logo />
-            <p className="text-gray-500">
+    <footer className="bg-slate-900 text-white relative overflow-hidden">
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-emerald-600/20 blur-3xl rounded-full" />
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-teal-600/20 blur-3xl rounded-full" />
+
+      <div className="container relative mx-auto px-4 md:px-6 py-12 md:py-16">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+          {/* BRAND */}
+          <motion.div variants={fadeUp} className="space-y-4">
+            <div className="flex items-center gap-2">
+              <div className="relative">
+                <Link href="/">
+                  <Image
+                    alt="Logo"
+                    src="/images/aden.png"
+                    width={50}
+                    height={50}
+                    className="rounded-full"
+                  />
+                </Link>
+              </div>
+              <h2 className="text-lg font-bold text-gray-300">ADEN</h2>
+            </div>
+            <p className="text-gray-400 leading-7">
               Empowering Africa&apos;s educational institutions through digital
               transformation.
             </p>
-            <div className="flex gap-4">
+
+            <div className="flex gap-3">
               {socialPlatforms.map((platform) => (
-                <SocialIcon key={platform} platform={platform} />
+                <SocialIcon key={platform.name} platform={platform} />
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-gray-500">Resources</h3>
-            <ul className="space-y-2 ">
+          {/* RESOURCES */}
+          <motion.div variants={fadeUp} className="space-y-4">
+            <h3 className="text-lg font-semibold">Resources</h3>
+            <ul className="space-y-3">
               {resourceLinks.map((item) => (
                 <FooterLink key={item} text={item} />
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-gray-500">About</h3>
-            <ul className="space-y-2">
+          {/* ABOUT */}
+          <motion.div variants={fadeUp} className="space-y-4">
+            <h3 className="text-lg font-semibold">About</h3>
+            <ul className="space-y-3">
               {aboutLinks.map((item) => (
                 <FooterLink key={item} text={item} />
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-gray-500">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="text-emerald-400 shrink-0 size-4" />
-                <span className="text-gray-500">
-                  ACENPEE BUILDING, Adj. Drama Village, Ahmadu Bello University,
-                  Zaria.
-                </span>
+          {/* CONTACT */}
+          <motion.div variants={fadeUp} className="space-y-4">
+            <h3 className="text-lg font-semibold">Contact</h3>
+
+            <ul className="space-y-4 text-gray-400">
+              <li className="flex gap-3">
+                <MapPin className="text-emerald-400 size-4 mt-1" />
+                <span>ACENPEE Building, Ahmadu Bello University, Zaria.</span>
               </li>
-              <li className="flex items-center gap-3">
-                <PhoneCall className="text-emerald-400 shrink-0 size-4" />
-                <span className="text-gray-500">+234 123 456 789</span>
+
+              <li className="flex gap-3">
+                <PhoneCall className="text-emerald-400 size-4 mt-1" />
+                <span>+234 123 456 789</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="text-emerald-400 shrink-0 size-4" />
-                <span className="text-gray-500">contact@aden.org</span>
+
+              <li className="flex gap-3">
+                <Mail className="text-emerald-400 size-4 mt-1" />
+                <span>contact@aden.org</span>
               </li>
             </ul>
-            <div className="pt-4">
+
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
               <Button
                 onClick={open}
-                className="bg-gradient-to-r cursor-pointer from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white"
+                className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white w-full rounded-xl"
               >
                 Subscribe to Newsletter
               </Button>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
-        <Separator className="my-12" />
+        <Separator className="my-12 bg-white/10" />
 
-        <div className="  flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} African Digital Education Network.
-            All rights reserved.
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p className="text-sm text-gray-500">
+            &copy; {new Date().getFullYear()} ADEN. All rights reserved.
           </p>
+
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
               (item) => (
                 <Link
                   key={item}
                   href="#"
-                  className="text-sm text-gray-400 hover:text-emerald-400 transition-colors"
+                  className="text-sm text-gray-500 hover:text-emerald-400 transition-colors"
                 >
                   {item}
                 </Link>
-              )
+              ),
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
@@ -114,38 +171,28 @@ function FooterLink({ text }: { text: string }) {
     <li>
       <Link
         href="#"
-        className="text-gray-500 hover:text-emerald-400 transition-colors flex items-center gap-2"
+        className="group flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors"
       >
-        <ArrowRight className="h-3 w-3" />
+        <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition" />
         {text}
       </Link>
     </li>
   );
 }
 
-function SocialIcon({ platform }: { platform: string }) {
+function SocialIcon({
+  platform,
+}: {
+  platform: { name: string; icon: React.ReactNode };
+}) {
   return (
-    <a
+    <Link
       href="#"
-      className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors"
-      aria-label={platform}
+      className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 hover:bg-emerald-600 transition-all duration-300 hover:scale-110"
+      aria-label={platform.name}
     >
-      <span className="sr-only">{platform}</span>
-      {platform === "Twitter" && (
-        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-        </svg>
-      )}
-      {platform === "LinkedIn" && (
-        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"></path>
-        </svg>
-      )}
-      {platform === "Facebook" && (
-        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-        </svg>
-      )}
-    </a>
+      <span className="sr-only">{platform.name}</span>
+      {platform.icon}
+    </Link>
   );
 }
