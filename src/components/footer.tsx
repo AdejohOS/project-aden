@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, MapPin, PhoneCall } from "lucide-react";
 
 import { Separator } from "./ui/separator";
 import { useSubscribeModal } from "@/hooks/use-subscribe";
@@ -11,6 +10,7 @@ import Image from "next/image";
 
 import { FaLinkedinIn, FaFacebook } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
+import { MapPin, PhoneCall, Mail, ArrowRight } from "lucide-react";
 
 const container = {
   hidden: {},
