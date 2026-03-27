@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, MapPin, PhoneCall, X } from "lucide-react";
+import { ArrowRight, Mail, MapPin, PhoneCall } from "lucide-react";
 
 import { Separator } from "./ui/separator";
 import { useSubscribeModal } from "@/hooks/use-subscribe";
